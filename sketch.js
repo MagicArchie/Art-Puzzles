@@ -18,8 +18,7 @@ let backgroundMusic1;
 let backgroundMusic2;
 let currentMusic;
 
-let LocationS = 0
-localStorage.setItem('PageL', LocationS);
+let LocationS = parseInt(localStorage.getItem('PageL'), 10);
 
 function preload() {
   //loadFont('Granesta.otf');
@@ -65,6 +64,13 @@ function setup() {
 
 function draw() {
   image(backgroundImage, 0, 0, width, height);
+  
+  if (LocationS < 111) {
+    LocationS = 0
+    localStorage.setItem('PageL', LocationS);
+  } else {
+    localStorage.setItem('PageL', LocationS);
+  }
 
   textSize(100);
   textAlign(CENTER, CENTER);
@@ -143,7 +149,27 @@ function mousePressed() {
 }
 
 function goToMainPage() {
-  window.location.href = 'https://magicarchie.github.io/Stage_Selection_1/';
+  if (LocationS == 111) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_1/";
+      } else if (LocationS == 222) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_2/";       
+      } else if (LocationS == 333) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_3/";       
+      } else if (LocationS == 444) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_4/";      
+      } else if (LocationS == 555) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_5/";    
+      } else if (LocationS == 666) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_6/";       
+      } else if (LocationS == 777) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_7/";      
+      } else if (LocationS == 888) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_Secret/";   
+      } else if (LocationS == 999) {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_Finale/"; 
+      } else {
+        window.location.href = "https://magicarchie.github.io/Stage_Selection_1/";
+      }
 }
 
 function toggleDialog() {
