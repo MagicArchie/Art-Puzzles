@@ -18,6 +18,9 @@ let backgroundMusic1;
 let backgroundMusic2;
 let currentMusic;
 
+let LocationS = 0
+localStorage.setItem('PageL', LocationS);
+
 function preload() {
   //loadFont('Granesta.otf');
   
