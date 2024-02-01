@@ -65,8 +65,8 @@ function setup() {
 function draw() {
   image(backgroundImage, 0, 0, width, height);
   
-  if (LocationS < 111) {
-    LocationS = 0
+  if (LocationS != 111 || LocationS != 222 || LocationS != 333 || LocationS != 444 || LocationS != 555 || LocationS != 666 || LocationS != 777 || LocationS != 888 || LocationS != 999) {
+    LocationS = 1
     localStorage.setItem('PageL', LocationS);
   } else {
     localStorage.setItem('PageL', LocationS);
